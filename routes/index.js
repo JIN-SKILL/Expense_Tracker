@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const index = require('./modules/index')
+const home = require('./modules/home')
 
-router.use('/', index)
+router.use('/', home)
 
 module.exports = router

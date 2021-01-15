@@ -4,8 +4,8 @@ const db = require('../../config/mongoose')
 db.once('open', () => {
   Category.create(
     {
-      name: 'fas fa-home',
-      tag: '家居物業'
+      name: '家居物業',
+      tag: 'fas fa-home'
     },
     {
       name: '交通出行',

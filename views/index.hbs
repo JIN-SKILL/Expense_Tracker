@@ -1,5 +1,30 @@
-<ul class="list-group">
-  {{#each records}}
-  <li class="list-group-item">{{ this.name }} / {{ this.category }} / {{ this.date }} / {{ this.amount }}</li>
-  {{/each}}
-</ul>
+<div class="row">
+  <div class="col-12 mb-2">
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+      <option selected>類別</option>
+      <option value="1">家居物業</option>
+      <option value="2">交通出行</option>
+      <option value="3">休閒娛樂</option>
+      <option value="4">餐飲食品</option>
+      <option value="5">其他</option>
+    </select>
+  </div>
+  <div class="col-12 mb-2">
+    <span class="fs-4 me-3 align-top">總金額:</span><span class="total-style fw-bolder align-top float-end">{{ total }}</span>
+  </div>
+  <div class="col-12 mb-5">
+    <ul class="list-group">
+      {{#each records}}
+      <li class="list-group-item">{{ this.name }} / {{ this.category }} / {{ this.date }} / {{ this.amount }}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-12 text-center">
+    <a class="btn btn-warning px-5" href="/" role="button">新增支出</a>
+  </div>
+</div>
+
+
+
+
+
