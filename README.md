@@ -35,29 +35,21 @@
 	```
     npm i
     ```
-4. 匯入測試資料_record
+4. 匯入測試資料
 	```
-    npm run seed1
+    npm run seed
     ```
-5. 終端機 (Terminal) 顯示以下內容，即可按兩次 Ctrl+C 跳回控制介面
+5. 待終端機 (Terminal) 顯示以下內容
 	```
     mongoDB connected.
     Completed seed1 loading.
+    Datebase connection close.
     ```
-6. 匯入測試資料_category
-	```
-    npm run seed2
-    ```
-7. 終端機 (Terminal) 顯示以下內容，即可按兩次 Ctrl+C 跳回控制介面
-	```
-    mongoDB connected.
-    Completed seed2 loading.
-    ```
-8. 啟用 localhost 伺服器
+6. 啟用 localhost 伺服器
 	```
     npm run dev
     ```
-9. 終端機 (Terminal) 顯示以下內容，即可在瀏覽器輸入 [http://localhost:3000](http://localhost:3000) 使用網站
+7. 終端機 (Terminal) 顯示以下內容，即可在瀏覽器輸入 [http://localhost:3000](http://localhost:3000) 使用網站
 	```
     The server is listening on http://localhost:3000
     mongoDB connected.

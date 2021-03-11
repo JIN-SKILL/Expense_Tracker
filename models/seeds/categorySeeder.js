@@ -23,6 +23,10 @@ db.once('open', () => {
       name: '其他',
       icon: 'fas fa-pen'
     }
-  )
-  console.log('Completed seed loading.')
+  ).then(() => {
+    console.log('Completed seed loading.')
+    return db.close()
+  }).then(() => {
+    console.log('Datebase connection close.')
+  })
 })

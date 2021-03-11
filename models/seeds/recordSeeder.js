@@ -17,6 +17,10 @@ db.once('open', () => {
       amount: 1599,
       icon: 'fas fa-grin-beam'
     }
-  )
-  console.log('Completed seed loading.')
+  ).then(() => {
+    console.log('Completed seed loading.')
+    return db.close()
+  }).then(() => {
+    console.log('Datebase connection close.')
+  })
 })
