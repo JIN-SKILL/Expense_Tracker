@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-12 mb-2">
+  <div class="col-9 mb-2">
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
       <option selected>類別</option>
       <option value="1">家居物業</option>
@@ -9,18 +9,41 @@
       <option value="5">其他</option>
     </select>
   </div>
-  <div class="col-12 mb-2">
+  <div class="col-9 mb-2">
     <span class="fs-4 me-3 align-top">總金額:</span><span class="total-style fw-bolder align-top float-end">{{ total }}</span>
   </div>
-  <div class="col-12 mb-5">
+  <div class="col-9 mb-5">
     <ul class="list-group">
       {{#each records}}
-      <li class="list-group-item">{{ this.name }} / {{ this.category }} / {{ this.date }} / {{ this.amount }}</li>
+        <li class="list-group-item d-flex">
+          <div class="fs-1 text-info px-2 py-1 me-2" style="width: 60px;">
+            <i class="{{ this.icon }}"></i>
+          </div>
+          <div class="d-flex flex-column">
+            <span class="fs-5">{{ this.name }}</span>
+            <span class="">{{ this.date }}</span>
+          </div>
+          <div class="flex-fill align-self-center">
+            <span class="fs-4 float-end ">{{ this.amount }}</span>
+          </div>
+        </li>
       {{/each}}
     </ul>
   </div>
-  <div class="col-12 text-center">
-    <a class="btn btn-warning px-5" href="/" role="button">新增支出</a>
+  <div class="col-3 mb-5 h-auto">
+    <ul class="list-group h-100">
+      {{#each records}}
+        <li class="list-group-item h-100 border-0 d-flex justify-content-center align-items-center">
+          <a class="m-2 link-secondary text-decoration-none" href="/item/edit/{{ this._id }}">修改</a>
+          <form action="/item/delete/{{ this._id }}?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-link m-2 link-secondary text-decoration-none">刪除</button>
+          </form>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-9 text-center mb-5">
+    <a class="btn btn-warning px-5" href="/item/add" role="button">新增支出</a>
   </div>
 </div>
 

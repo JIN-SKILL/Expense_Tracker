@@ -5,23 +5,23 @@ db.once('open', () => {
   Category.create(
     {
       name: '家居物業',
-      tag: 'fas fa-home'
+      icon: 'fas fa-home'
     },
     {
       name: '交通出行',
-      tag: 'fas fa-shuttle-van'
+      icon: 'fas fa-shuttle-van'
     },
     {
       name: '休閒娛樂',
-      tag: 'fas fa-grin-beam'
+      icon: 'fas fa-grin-beam'
     },
     {
       name: '餐飲食品',
-      tag: 'fas fa-utensils'
+      icon: 'fas fa-utensils'
     },
     {
       name: '其他',
-      tag: 'fas fa-pen'
+      icon: 'fas fa-pen'
     }
   )
   console.log('Completed seed loading.')
