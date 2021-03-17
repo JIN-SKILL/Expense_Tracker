@@ -1,7 +1,9 @@
 #
-使用 Express.js + mongoDB 建置的。
+使用 Express.js + mongoDB 建置的記帳本。
 
-![Expense_Tracker]()
+https://jin-skill-expense-tracker.herokuapp.com/
+
+![Expense_Tracker](https://raw.githubusercontent.com/JIN-SKILL/Example_Image/main/Expense_Tracker.png)
 
 ## 網站功能
 + 列出所有支出項目
@@ -42,7 +44,7 @@
 5. 待終端機 (Terminal) 顯示以下內容
 	```
     mongoDB connected.
-    Completed seed1 loading.
+    Completed seed loading.
     Datebase connection close.
     ```
 6. 啟用 localhost 伺服器
