@@ -1,20 +1,21 @@
 <div class="row">
   <div class="col-9 mb-2">
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
-      <option selected>類別</option>
-      <option value="1">家居物業</option>
-      <option value="2">交通出行</option>
-      <option value="3">休閒娛樂</option>
-      <option value="4">餐飲食品</option>
-      <option value="5">其他</option>
-    </select>
+    <form action="/" method="POST" class="d-flex">
+      <select name="category" class="form-select form-select-lg mb-3 me-2" aria-label=".form-select-lg">
+        <option value="{{ currentCategory }}" selected>{{ currentCategory }}</option>
+        {{#each category}}
+        <option value="{{ this.name }},{{ this.icon }}">{{ this.name }}</option>
+        {{/each}}
+      </select>
+      <button type="submit" class="btn btn-danger mb-3">篩選</button>
+    </form>
   </div>
   <div class="col-9 mb-2">
     <span class="fs-4 me-3 align-top">總金額:</span><span class="total-style fw-bolder align-top float-end">{{ total }}</span>
   </div>
-  <div class="col-9 mb-5">
+  <div class="col-7 col-md-9 mb-5">
     <ul class="list-group">
-      {{#each records}}
+      {{#each items}}
         <li class="list-group-item d-flex">
           <div class="fs-1 text-info px-2 py-1 me-2" style="width: 60px;">
             <i class="{{ this.icon }}"></i>
@@ -30,9 +31,9 @@
       {{/each}}
     </ul>
   </div>
-  <div class="col-3 mb-5 h-auto">
+  <div class="col-5 col-md-3 mb-5 h-auto">
     <ul class="list-group h-100">
-      {{#each records}}
+      {{#each items}}
         <li class="list-group-item h-100 border-0 d-flex justify-content-center align-items-center">
           <a class="m-2 link-secondary text-decoration-none" href="/item/edit/{{ this._id }}">修改</a>
           <form action="/item/delete/{{ this._id }}?_method=DELETE" method="POST">
